@@ -85,5 +85,6 @@ class RealtimeMixin(object):
         base_request.session = scope.get("session", None)
 
         self.request = self.initialize_request(base_request)
+        self.request.user = base_request.user
         self.action = viewset_action  # TODO: custom subscription actions?
         return self
